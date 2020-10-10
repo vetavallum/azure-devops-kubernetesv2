@@ -15,7 +15,6 @@ steps:
   inputs:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-    commandOptions: '-var clientid=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
     backendServiceArm: 'azure-resource-manager-service-connection'
     ensureBackend: true
@@ -24,3 +23,11 @@ steps:
     backendAzureRmStorageAccountName: 'storagevetavallumxyz'
     backendAzureRmContainerName: 'storagevetavallumcontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstage'
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    environmentServiceName: 'azure-resource-manager-service-connection'
+    commandOptions: '-var clientid=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    
