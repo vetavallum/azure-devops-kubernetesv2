@@ -29,5 +29,5 @@ steps:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     environmentServiceName: 'azure-resource-manager-service-connection'
-    commandOptions: '-var clientid=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     
