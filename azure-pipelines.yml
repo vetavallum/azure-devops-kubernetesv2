@@ -20,9 +20,9 @@ steps:
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
     backendAzureRmResourceGroupLocation: 'westeurope'
-    backendAzureRmStorageAccountName: 'storagevetavallumxyz'
+    backendAzureRmStorageAccountName: 'storagevetavallumabc'
     backendAzureRmContainerName: 'storagevetavallumcontainer'
-    backendAzureRmKey: 'kubernetes-dev.tfstage'
+    backendAzureRmKey: 'kubernetes-dev2.tfstage'
 
 - task: TerraformCLI@0
   inputs:
